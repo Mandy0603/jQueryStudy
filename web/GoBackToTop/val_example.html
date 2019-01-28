@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 4000px;
+            width: 4000px;
+        }
+
+        div {
+            height: 100px;
+            width: 100px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            display: none;
+            z-index: 100;
+        }
+    </style>
+    <script src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+<div id="icon">
+    <img src="topArrow.png">
+</div>
+
+
+<script>
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 1000) {
+                $("#icon").fadeIn(1000);
+            } else {
+                $("#icon").fadeOut(1000);
+            }
+        });
+
+        $("#icon").click(function () {
+            $("html,body").animate({scrollTop: 0}, 500);
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>
